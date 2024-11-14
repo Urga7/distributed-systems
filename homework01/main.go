@@ -13,16 +13,17 @@ import (
 )
 
 type Comic = xkcd.Comic
+type WordCount struct {
+	Word  string
+	Count int
+}
 
 var wg sync.WaitGroup
 var lock sync.Mutex
 var num_comics int
 var processed_comics int
 
-type WordCount struct {
-	Word  string
-	Count int
-}
+const num_displayed_words int = 15
 
 func print_map(m map[string]int) {
 	var wordCountPairs []WordCount
@@ -38,7 +39,7 @@ func print_map(m map[string]int) {
 	})
 
 	for i, pair := range wordCountPairs {
-		if i >= 15 {
+		if i >= num_displayed_words {
 			break
 		}
 		fmt.Printf("%s, %d\n", pair.Word, pair.Count)
