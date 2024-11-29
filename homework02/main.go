@@ -23,9 +23,9 @@ type indexCountEntry struct {
 	count int
 }
 
-const producerDelay int = 80000
+const producerDelay int = 5000
 const producerActiveTime Duration = time.Millisecond * 100
-const controllerDelay Duration = time.Millisecond
+const controllerDelay Duration = time.Microsecond * 100
 const maxWorkers = 64
 const minWordLength = 4
 const queueCapacity int = 10000
@@ -104,7 +104,7 @@ func printIndex(index map[string][]uint64) {
 
 	fmt.Printf("\nTop 15 largest entries:\n")
 	for i := 0; i < len(entries) && i < 15; i++ {
-		fmt.Printf("%s: %d\n", entries[i].key, entries[i].count)
+		fmt.Printf("%d. %s (Appeared in %d posts)\n", i+1, entries[i].key, entries[i].count)
 	}
 
 	fmt.Println()
@@ -122,7 +122,7 @@ func saveStats(queueLength int, activeWorkers int) {
 	timestamps = append(timestamps, time.Now())
 }
 
-func calculateRequiredWorkers(queueLength int, maxWorkers int) int {
+func calculateRequiredWorkers(queueLength int) int {
 	requiredWorkers := int(float64(queueLength) * numWorkersConst)
 	if requiredWorkers < 1 {
 		return 1
@@ -167,7 +167,7 @@ func main() {
 	start := time.Now()
 	var producer Queue
 	producer.New(producerDelay)
-	stopWorker = make(chan bool, 128)
+	stopWorker = make(chan bool, maxWorkers)
 	taskChannel := producer.TaskChan
 	index := make(map[string][]uint64)
 
@@ -195,7 +195,7 @@ func main() {
 		}
 
 		saveStats(queueLength, activeWorkers)
-		requiredWorkers := calculateRequiredWorkers(queueLength, maxWorkers)
+		requiredWorkers := calculateRequiredWorkers(queueLength)
 		if requiredWorkers > activeWorkers {
 			newWorkers := requiredWorkers - activeWorkers
 			fmt.Printf("Workers: %d (+ %d)\n", activeWorkers, newWorkers)
