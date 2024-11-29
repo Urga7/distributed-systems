@@ -23,8 +23,9 @@ type indexCountEntry struct {
 	count int
 }
 
-const producerDelay Duration = time.Millisecond * 100
-const controllerDelay Duration = time.Microsecond
+const producerDelay int = 80000
+const producerActiveTime Duration = time.Millisecond * 100
+const controllerDelay Duration = time.Millisecond
 const maxWorkers = 64
 const minWordLength = 4
 const queueCapacity int = 10000
@@ -165,7 +166,7 @@ func indexer(input <-chan Task, index map[string][]uint64) {
 func main() {
 	start := time.Now()
 	var producer Queue
-	producer.New(5000)
+	producer.New(producerDelay)
 	stopWorker = make(chan bool, 128)
 	taskChannel := producer.TaskChan
 	index := make(map[string][]uint64)
@@ -174,7 +175,7 @@ func main() {
 	var producerStopped chan bool = make(chan bool)
 	go producer.Run()
 	go func() {
-		time.Sleep(producerDelay)
+		time.Sleep(producerActiveTime)
 		producer.Stop()
 		fmt.Println("Producer stopped")
 		producerStopped <- true
