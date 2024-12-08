@@ -24,22 +24,20 @@ type indexCountEntry struct {
 	count int
 }
 
-const producerDelay int = 8000
-const producerActiveTime Duration = time.Millisecond * 100
-const controllerDelay Duration = time.Microsecond * 100
-const maxWorkers = 256
+const producerDelay int = 5000
+const producerActiveTime Duration = time.Millisecond * 150
+const controllerDelay Duration = time.Microsecond * 300
+const maxWorkers = 64
 const minWordLength = 4
 const queueCapacity int = 10000
-const maxIntensityWorkers int = 512
+const maxIntensityWorkers int = 128
 const numWorkersConst float64 = float64(maxIntensityWorkers) / float64(queueCapacity)
 
 var live bool = false
-
 var stopWorker chan bool
 var queueStatistics []float64
 var workersStatistics []float64
 var timestamps []time.Time
-
 var wg sync.WaitGroup
 var lock sync.Mutex
 
@@ -113,12 +111,9 @@ func printIndex(index map[string][]uint64) {
 	fmt.Println()
 }
 
-func writeResults(mainIndex *sync.Map, localIndex map[string][]uint64) {
+func writeResults(mainIndex map[string][]uint64, localIndex map[string][]uint64) {
 	for word, ids := range localIndex {
-		existing, _ := mainIndex.LoadOrStore(word, ids)
-		if existing != nil {
-			mainIndex.Store(word, append(existing.([]uint64), ids...))
-		}
+		mainIndex[word] = append(mainIndex[word], ids...)
 	}
 }
 
@@ -139,10 +134,12 @@ func calculateRequiredWorkers(queueLength int) int {
 	return requiredWorkers
 }
 
-func indexer(input <-chan Task, mainIndex *sync.Map) {
+func indexer(input <-chan Task, index map[string][]uint64) {
 	localIndex := make(map[string][]uint64)
 	defer func() {
-		writeResults(mainIndex, localIndex)
+		lock.Lock()
+		writeResults(index, localIndex)
+		lock.Unlock()
 		wg.Done()
 	}()
 
@@ -177,7 +174,7 @@ func main() {
 	producer.New(producerDelay)
 	stopWorker = make(chan bool, maxWorkers)
 	taskChannel := producer.TaskChan
-	mainIndex := &sync.Map{}
+	index := make(map[string][]uint64)
 
 	var activeWorkers int
 	var producerStopped chan bool = make(chan bool)
@@ -185,8 +182,10 @@ func main() {
 	go func() {
 		time.Sleep(producerActiveTime)
 		producer.Stop()
-		fmt.Println("Producer stopped")
 		producerStopped <- true
+		if live {
+			fmt.Println("Producer stopped")
+		}
 	}()
 
 	var producerActive bool = true
@@ -206,13 +205,13 @@ func main() {
 		requiredWorkers := calculateRequiredWorkers(queueLength)
 		if requiredWorkers > activeWorkers {
 			newWorkers := requiredWorkers - activeWorkers
-			wg.Add(newWorkers)
 			if live {
 				fmt.Printf("Workers: %d (+ %d)\n", activeWorkers, newWorkers)
 			}
 
+			wg.Add(newWorkers)
 			for i := 0; i < newWorkers; i++ {
-				go indexer(taskChannel, mainIndex)
+				go indexer(taskChannel, index)
 			}
 		} else if requiredWorkers < activeWorkers {
 			obsoleteWorkers := activeWorkers - requiredWorkers
@@ -237,14 +236,8 @@ func main() {
 	close(stopWorker)
 	elapsed := time.Since(start)
 
-	index := map[string][]uint64{}
-	mainIndex.Range(func(key, value interface{}) bool {
-		index[key.(string)] = value.([]uint64)
-		return true
-	})
-
 	printIndex(index)
-	fmt.Printf("Elapsed time: %fs\n", elapsed.Seconds())
+	fmt.Printf("Elapsed time: %f\n", elapsed.Seconds())
 	fmt.Printf("Processing rate: %f MReqs/s\n", float64(producer.N)/float64(elapsed.Seconds())/1000000.0)
 	fmt.Printf("Average queue length: %.2f %%\n", producer.GetAverageQueueLength())
 	fmt.Printf("Max queue length: %.2f %%\n", producer.GetMaxQueueLength())
