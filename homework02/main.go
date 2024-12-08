@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"homework02/socialNetwork"
+	"os"
 	"regexp"
 	"sort"
 	"strings"
@@ -23,14 +24,16 @@ type indexCountEntry struct {
 	count int
 }
 
-const producerDelay int = 5000
-const producerActiveTime Duration = time.Millisecond * 100
-const controllerDelay Duration = time.Microsecond * 100
+const producerDelay int = 3000000
+const producerActiveTime Duration = time.Second * 10
+const controllerDelay Duration = time.Millisecond
 const maxWorkers = 64
 const minWordLength = 4
 const queueCapacity int = 10000
 const maxIntensityWorkers int = 128
 const numWorkersConst float64 = float64(maxIntensityWorkers) / float64(queueCapacity)
+
+var live bool = false
 
 var stopWorker chan bool
 var queueStatistics []float64
@@ -164,6 +167,10 @@ func indexer(input <-chan Task, index map[string][]uint64) {
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "live" {
+		live = true
+	}
+
 	start := time.Now()
 	var producer Queue
 	producer.New(producerDelay)
@@ -190,7 +197,7 @@ func main() {
 		}
 
 		queueLength := len(producer.TaskChan)
-		if queueLength > 0 {
+		if live && queueLength > 0 {
 			fmt.Printf("Queue: %d\n", queueLength)
 		}
 
@@ -198,14 +205,20 @@ func main() {
 		requiredWorkers := calculateRequiredWorkers(queueLength)
 		if requiredWorkers > activeWorkers {
 			newWorkers := requiredWorkers - activeWorkers
-			fmt.Printf("Workers: %d (+ %d)\n", activeWorkers, newWorkers)
 			wg.Add(newWorkers)
+			if live {
+				fmt.Printf("Workers: %d (+ %d)\n", activeWorkers, newWorkers)
+			}
+
 			for i := 0; i < newWorkers; i++ {
 				go indexer(taskChannel, index)
 			}
 		} else if requiredWorkers < activeWorkers {
 			obsoleteWorkers := activeWorkers - requiredWorkers
-			fmt.Printf("Workers: %d (- %d)\n", activeWorkers, obsoleteWorkers)
+			if live {
+				fmt.Printf("Workers: %d (- %d)\n", activeWorkers, obsoleteWorkers)
+			}
+
 			for i := 0; i < obsoleteWorkers; i++ {
 				stopWorker <- true
 			}
@@ -224,7 +237,7 @@ func main() {
 	elapsed := time.Since(start)
 
 	printIndex(index)
-	fmt.Printf("Elapsed time: %f\n", elapsed.Seconds())
+	fmt.Printf("Elapsed time: %fs\n", elapsed.Seconds())
 	fmt.Printf("Processing rate: %f MReqs/s\n", float64(producer.N)/float64(elapsed.Seconds())/1000000.0)
 	fmt.Printf("Average queue length: %.2f %%\n", producer.GetAverageQueueLength())
 	fmt.Printf("Max queue length: %.2f %%\n", producer.GetMaxQueueLength())
