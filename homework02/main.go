@@ -24,13 +24,13 @@ type indexCountEntry struct {
 	count int
 }
 
-const producerDelay int = 3000000
-const producerActiveTime Duration = time.Second * 10
-const controllerDelay Duration = time.Millisecond
-const maxWorkers = 64
+const producerDelay int = 8000
+const producerActiveTime Duration = time.Millisecond * 100
+const controllerDelay Duration = time.Microsecond * 100
+const maxWorkers = 256
 const minWordLength = 4
 const queueCapacity int = 10000
-const maxIntensityWorkers int = 128
+const maxIntensityWorkers int = 512
 const numWorkersConst float64 = float64(maxIntensityWorkers) / float64(queueCapacity)
 
 var live bool = false
@@ -113,9 +113,12 @@ func printIndex(index map[string][]uint64) {
 	fmt.Println()
 }
 
-func writeResults(mainIndex map[string][]uint64, localIndex map[string][]uint64) {
+func writeResults(mainIndex *sync.Map, localIndex map[string][]uint64) {
 	for word, ids := range localIndex {
-		mainIndex[word] = append(mainIndex[word], ids...)
+		existing, _ := mainIndex.LoadOrStore(word, ids)
+		if existing != nil {
+			mainIndex.Store(word, append(existing.([]uint64), ids...))
+		}
 	}
 }
 
@@ -136,12 +139,10 @@ func calculateRequiredWorkers(queueLength int) int {
 	return requiredWorkers
 }
 
-func indexer(input <-chan Task, index map[string][]uint64) {
+func indexer(input <-chan Task, mainIndex *sync.Map) {
 	localIndex := make(map[string][]uint64)
 	defer func() {
-		lock.Lock()
-		writeResults(index, localIndex)
-		lock.Unlock()
+		writeResults(mainIndex, localIndex)
 		wg.Done()
 	}()
 
@@ -176,7 +177,7 @@ func main() {
 	producer.New(producerDelay)
 	stopWorker = make(chan bool, maxWorkers)
 	taskChannel := producer.TaskChan
-	index := make(map[string][]uint64)
+	mainIndex := &sync.Map{}
 
 	var activeWorkers int
 	var producerStopped chan bool = make(chan bool)
@@ -211,7 +212,7 @@ func main() {
 			}
 
 			for i := 0; i < newWorkers; i++ {
-				go indexer(taskChannel, index)
+				go indexer(taskChannel, mainIndex)
 			}
 		} else if requiredWorkers < activeWorkers {
 			obsoleteWorkers := activeWorkers - requiredWorkers
@@ -235,6 +236,12 @@ func main() {
 	wg.Wait()
 	close(stopWorker)
 	elapsed := time.Since(start)
+
+	index := map[string][]uint64{}
+	mainIndex.Range(func(key, value interface{}) bool {
+		index[key.(string)] = value.([]uint64)
+		return true
+	})
 
 	printIndex(index)
 	fmt.Printf("Elapsed time: %fs\n", elapsed.Seconds())
