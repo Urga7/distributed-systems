@@ -1,0 +1,632 @@
+(?<host>\S*) (?<clock>{.*})\n(?<event>.*)
+
+Process-0 {"Process-0":1}
+Initialization Complete
+Process-0 {"Process-0":2}
+INFO Priprava sporocila 
+Process-0 {"Process-0":3}
+INFO Poslano sporocilo 
+Process-0 {"Process-0":4}
+INFO Priprava sporocila 
+Process-0 {"Process-0":5}
+INFO Poslano sporocilo 
+Process-1 {"Process-1":1}
+Initialization Complete
+Process-1 {"Process-0":3, "Process-1":2, "Process-22":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":3, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-1 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-1 {"Process-0":3, "Process-1":5, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-1 {"Process-0":3, "Process-1":6, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-1 {"Process-0":3, "Process-1":7, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-1 {"Process-0":3, "Process-1":8, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-1 {"Process-0":3, "Process-1":9, "Process-22":8, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":10, "Process-12":4, "Process-22":8, "Process-3":4, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":11, "Process-12":4, "Process-22":8, "Process-3":4, "Process-31":4, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":12, "Process-12":4, "Process-20":8, "Process-22":8, "Process-23":8, "Process-3":4, "Process-31":4, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":13, "Process-12":4, "Process-15":4, "Process-2":4, "Process-20":8, "Process-22":8, "Process-23":8, "Process-29":6, "Process-3":4, "Process-31":4, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-1 {"Process-0":3, "Process-1":14, "Process-12":4, "Process-15":4, "Process-16":8, "Process-17":8, "Process-2":4, "Process-20":8, "Process-22":8, "Process-23":8, "Process-29":6, "Process-3":4, "Process-31":4, "Process-4":6, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-10 {"Process-10":1}
+Initialization Complete
+Process-10 {"Process-0":3, "Process-10":2, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-10 {"Process-0":3, "Process-10":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-10 {"Process-0":3, "Process-10":4, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-10 {"Process-0":3, "Process-10":5, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-10 {"Process-0":3, "Process-10":6, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-10 {"Process-0":3, "Process-10":7, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-10 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-10 {"Process-0":3, "Process-10":9, "Process-11":4, "Process-12":8, "Process-14":8, "Process-19":6, "Process-22":4, "Process-27":6, "Process-30":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-10 {"Process-0":3, "Process-10":10, "Process-11":4, "Process-12":8, "Process-14":8, "Process-19":6, "Process-22":4, "Process-27":6, "Process-30":8, "Process-6":4, "Process-8":4}
+INFO Prejeto sporocilo 
+Process-11 {"Process-11":1}
+Initialization Complete
+Process-11 {"Process-0":3, "Process-11":2, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-11 {"Process-0":3, "Process-11":3, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-11 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-11 {"Process-0":3, "Process-11":5, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-11 {"Process-0":3, "Process-11":6, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-11 {"Process-0":3, "Process-11":7, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-11 {"Process-0":3, "Process-11":8, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-11 {"Process-0":3, "Process-11":9, "Process-12":8, "Process-18":6, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-12 {"Process-12":1}
+Initialization Complete
+Process-12 {"Process-0":3, "Process-12":2, "Process-22":4, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-12 {"Process-0":3, "Process-12":3, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-12 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-12 {"Process-0":3, "Process-12":5, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-12 {"Process-0":3, "Process-12":6, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-12 {"Process-0":3, "Process-12":7, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-12 {"Process-0":3, "Process-12":8, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-12 {"Process-0":3, "Process-12":9, "Process-15":4, "Process-2":4, "Process-20":6, "Process-22":4, "Process-29":4, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-12 {"Process-0":3, "Process-12":10, "Process-15":4, "Process-19":4, "Process-2":4, "Process-20":6, "Process-22":4, "Process-24":6, "Process-29":4, "Process-6":6, "Process-7":6}
+INFO Prejeto sporocilo 
+Process-13 {"Process-13":1}
+Initialization Complete
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":2, "Process-22":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":3, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":4, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":5, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":6, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":7, "Process-22":8, "Process-6":4}
+INFO Priprava sporocila 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":8, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-13 {"Process-0":3, "Process-1":8, "Process-13":9, "Process-15":8, "Process-20":6, "Process-22":8, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-13 {"Process-0":3, "Process-1":8, "Process-10":4, "Process-11":4, "Process-12":8, "Process-13":10, "Process-15":8, "Process-20":6, "Process-22":8, "Process-30":8, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-14 {"Process-14":1}
+Initialization Complete
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":2, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":3, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":4, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":5, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":6, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":7, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":8, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":9, "Process-19":8, "Process-22":4, "Process-26":6, "Process-27":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-14 {"Process-0":3, "Process-12":6, "Process-14":10, "Process-19":8, "Process-22":4, "Process-26":6, "Process-27":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-15 {"Process-15":1}
+Initialization Complete
+Process-15 {"Process-0":3, "Process-15":2, "Process-20":6, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-15 {"Process-0":3, "Process-15":3, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-15 {"Process-0":3, "Process-15":4, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-15 {"Process-0":3, "Process-15":5, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-15 {"Process-0":3, "Process-15":6, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-15 {"Process-0":3, "Process-15":7, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-15 {"Process-0":3, "Process-15":8, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-15 {"Process-0":3, "Process-15":9, "Process-2":6, "Process-20":6, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-16 {"Process-16":1}
+Initialization Complete
+Process-16 {"Process-0":3, "Process-16":2, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-16 {"Process-0":3, "Process-16":3, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-16 {"Process-0":3, "Process-16":4, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-16 {"Process-0":3, "Process-16":5, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-16 {"Process-0":3, "Process-16":6, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-16 {"Process-0":3, "Process-16":7, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-16 {"Process-0":3, "Process-16":8, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-16 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-16":9, "Process-17":8, "Process-22":6, "Process-30":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-17 {"Process-17":1}
+Initialization Complete
+Process-17 {"Process-0":3, "Process-17":2, "Process-22":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-17 {"Process-0":3, "Process-17":3, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-17 {"Process-0":3, "Process-17":4, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-17 {"Process-0":3, "Process-17":5, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-17 {"Process-0":3, "Process-17":6, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-17 {"Process-0":3, "Process-17":7, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-17 {"Process-0":3, "Process-17":8, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-17 {"Process-0":3, "Process-17":9, "Process-20":4, "Process-22":6, "Process-5":4, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-18 {"Process-18":1}
+Initialization Complete
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":2, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":3, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":4, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":5, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":6, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":7, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-18 {"Process-0":3, "Process-12":4, "Process-18":8, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-19 {"Process-19":1}
+Initialization Complete
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":2, "Process-22":4, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":3, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":5, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":7, "Process-22":4, "Process-6":4}
+INFO Priprava sporocila 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-19 {"Process-0":3, "Process-12":6, "Process-19":9, "Process-20":4, "Process-22":4, "Process-5":8, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-19 {"Process-0":3, "Process-1":4, "Process-12":6, "Process-19":10, "Process-20":4, "Process-22":8, "Process-31":6, "Process-5":8, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-2 {"Process-2":1}
+Initialization Complete
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":2, "Process-20":6, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":3, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":5, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":6, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":7, "Process-20":6, "Process-6":6}
+INFO Priprava sporocila 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":8, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":9, "Process-20":6, "Process-5":6, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-2 {"Process-0":3, "Process-15":4, "Process-2":10, "Process-20":6, "Process-4":8, "Process-5":6, "Process-6":8, "Process-9":4}
+INFO Prejeto sporocilo 
+Process-20 {"Process-20":1}
+Initialization Complete
+Process-20 {"Process-0":3, "Process-20":2, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-20 {"Process-0":3, "Process-20":3, "Process-6":6}
+INFO Priprava sporocila 
+Process-20 {"Process-0":3, "Process-20":4, "Process-6":6}
+INFO Poslano sporocilo 
+Process-20 {"Process-0":3, "Process-20":5, "Process-6":6}
+INFO Priprava sporocila 
+Process-20 {"Process-0":3, "Process-20":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-20 {"Process-0":3, "Process-20":7, "Process-6":6}
+INFO Priprava sporocila 
+Process-20 {"Process-0":3, "Process-20":8, "Process-6":6}
+INFO Poslano sporocilo 
+Process-20 {"Process-0":3, "Process-20":9, "Process-4":4, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-21 {"Process-21":1}
+Initialization Complete
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":2, "Process-22":6, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":3, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":4, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":5, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":6, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":7, "Process-22":6, "Process-6":4}
+INFO Priprava sporocila 
+Process-21 {"Process-0":3, "Process-17":6, "Process-21":8, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-21 {"Process-0":3, "Process-1":6, "Process-17":6, "Process-21":9, "Process-22":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-21 {"Process-0":3, "Process-1":6, "Process-17":6, "Process-21":10, "Process-22":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-21 {"Process-0":3, "Process-1":8, "Process-13":4, "Process-17":6, "Process-21":11, "Process-22":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-22 {"Process-22":1}
+Initialization Complete
+Process-22 {"Process-0":3, "Process-22":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-22 {"Process-0":3, "Process-22":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-22 {"Process-0":3, "Process-22":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-22 {"Process-0":3, "Process-22":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-22 {"Process-0":3, "Process-22":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-22 {"Process-0":3, "Process-22":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-22 {"Process-0":3, "Process-22":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-22 {"Process-0":3, "Process-22":9, "Process-4":8, "Process-6":8, "Process-9":6}
+INFO Prejeto sporocilo 
+Process-22 {"Process-0":3, "Process-1":4, "Process-22":10, "Process-31":8, "Process-4":8, "Process-6":8, "Process-9":6}
+INFO Prejeto sporocilo 
+Process-23 {"Process-23":1}
+Initialization Complete
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":2, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":3, "Process-6":6}
+INFO Priprava sporocila 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":4, "Process-6":6}
+INFO Poslano sporocilo 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":5, "Process-6":6}
+INFO Priprava sporocila 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":7, "Process-6":6}
+INFO Priprava sporocila 
+Process-23 {"Process-0":3, "Process-20":8, "Process-23":8, "Process-6":6}
+INFO Poslano sporocilo 
+Process-23 {"Process-0":3, "Process-17":6, "Process-20":8, "Process-21":4, "Process-22":6, "Process-23":9, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-23 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-17":6, "Process-20":8, "Process-21":4, "Process-22":6, "Process-23":10, "Process-30":4, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-23 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-17":6, "Process-20":8, "Process-21":4, "Process-22":6, "Process-23":11, "Process-30":4, "Process-4":8, "Process-6":8, "Process-9":8}
+INFO Prejeto sporocilo 
+Process-23 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-15":4, "Process-17":6, "Process-2":4, "Process-20":8, "Process-21":4, "Process-22":6, "Process-23":12, "Process-29":8, "Process-30":4, "Process-4":8, "Process-6":8, "Process-9":8}
+INFO Prejeto sporocilo 
+Process-24 {"Process-24":1}
+Initialization Complete
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":2, "Process-6":4, "Process-7":6}
+INFO Prejeto sporocilo 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":3, "Process-6":4, "Process-7":6}
+INFO Priprava sporocila 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":4, "Process-6":4, "Process-7":6}
+INFO Poslano sporocilo 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":5, "Process-6":4, "Process-7":6}
+INFO Priprava sporocila 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":6, "Process-6":4, "Process-7":6}
+INFO Poslano sporocilo 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":7, "Process-6":4, "Process-7":6}
+INFO Priprava sporocila 
+Process-24 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":8, "Process-6":4, "Process-7":6}
+INFO Poslano sporocilo 
+Process-24 {"Process-0":5, "Process-12":6, "Process-19":4, "Process-22":4, "Process-24":9, "Process-6":4, "Process-7":6}
+INFO Prejeto sporocilo 
+Process-25 {"Process-25":1}
+Initialization Complete
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":2, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":3, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":4, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":5, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":6, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":7, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-25 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-25":8, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-25 {"Process-0":3, "Process-1":8, "Process-12":6, "Process-13":8, "Process-19":4, "Process-22":8, "Process-25":9, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-25 {"Process-0":3, "Process-1":8, "Process-12":6, "Process-13":8, "Process-19":4, "Process-22":8, "Process-25":10, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-26 {"Process-26":1}
+Initialization Complete
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-26 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-22":4, "Process-26":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-26 {"Process-0":3, "Process-12":6, "Process-16":6, "Process-17":8, "Process-19":8, "Process-22":6, "Process-26":9, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-26 {"Process-0":3, "Process-10":6, "Process-11":4, "Process-12":8, "Process-16":6, "Process-17":8, "Process-19":8, "Process-22":6, "Process-26":10, "Process-30":8, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-27 {"Process-27":1}
+Initialization Complete
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-27 {"Process-0":3, "Process-12":6, "Process-19":6, "Process-22":4, "Process-27":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-28 {"Process-28":1}
+Initialization Complete
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":2, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":3, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":4, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":5, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":6, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":7, "Process-6":4, "Process-7":4}
+INFO Priprava sporocila 
+Process-28 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-28":8, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-29 {"Process-29":1}
+Initialization Complete
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":2, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":3, "Process-6":6}
+INFO Priprava sporocila 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":4, "Process-6":6}
+INFO Poslano sporocilo 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":5, "Process-6":6}
+INFO Priprava sporocila 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":7, "Process-6":6}
+INFO Priprava sporocila 
+Process-29 {"Process-0":3, "Process-15":4, "Process-2":4, "Process-20":6, "Process-29":8, "Process-6":6}
+INFO Poslano sporocilo 
+Process-29 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-15":4, "Process-2":4, "Process-20":6, "Process-22":4, "Process-29":9, "Process-30":8, "Process-6":6, "Process-8":6}
+INFO Prejeto sporocilo 
+Process-3 {"Process-3":1}
+Initialization Complete
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-3 {"Process-0":3, "Process-12":4, "Process-22":4, "Process-3":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-3 {"Process-0":3, "Process-12":4, "Process-17":4, "Process-22":6, "Process-3":9, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-3 {"Process-0":3, "Process-12":4, "Process-17":4, "Process-20":8, "Process-22":6, "Process-23":6, "Process-3":10, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-3 {"Process-0":3, "Process-11":6, "Process-12":8, "Process-17":4, "Process-20":8, "Process-22":6, "Process-23":6, "Process-3":11, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-3 {"Process-0":3, "Process-11":6, "Process-12":8, "Process-17":4, "Process-19":4, "Process-20":8, "Process-22":6, "Process-23":6, "Process-3":12, "Process-6":6, "Process-7":8}
+INFO Prejeto sporocilo 
+Process-3 {"Process-0":3, "Process-11":6, "Process-12":8, "Process-17":4, "Process-19":4, "Process-20":8, "Process-22":6, "Process-23":6, "Process-24":4, "Process-3":13, "Process-6":6, "Process-7":8}
+INFO Prejeto sporocilo 
+Process-30 {"Process-30":1}
+Initialization Complete
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-14":4, "Process-19":6, "Process-22":4, "Process-27":6, "Process-30":9, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-30 {"Process-0":3, "Process-11":4, "Process-12":8, "Process-14":4, "Process-19":6, "Process-22":4, "Process-24":8, "Process-27":6, "Process-30":10, "Process-6":4, "Process-7":6}
+INFO Prejeto sporocilo 
+Process-31 {"Process-31":1}
+Initialization Complete
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":2, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":3, "Process-6":4}
+INFO Priprava sporocila 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":4, "Process-6":4}
+INFO Poslano sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":5, "Process-6":4}
+INFO Priprava sporocila 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":6, "Process-6":4}
+INFO Poslano sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":7, "Process-6":4}
+INFO Priprava sporocila 
+Process-31 {"Process-0":3, "Process-1":4, "Process-22":8, "Process-31":8, "Process-6":4}
+INFO Poslano sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-12":6, "Process-19":6, "Process-22":8, "Process-27":4, "Process-31":9, "Process-6":4}
+INFO Prejeto sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-12":6, "Process-19":6, "Process-22":8, "Process-27":4, "Process-28":4, "Process-31":10, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-31 {"Process-0":3, "Process-1":4, "Process-11":8, "Process-12":8, "Process-19":6, "Process-22":8, "Process-27":4, "Process-28":4, "Process-31":11, "Process-6":4, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-4 {"Process-4":1}
+Initialization Complete
+Process-4 {"Process-0":3, "Process-4":2, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-4 {"Process-0":3, "Process-4":3, "Process-6":8}
+INFO Priprava sporocila 
+Process-4 {"Process-0":3, "Process-4":4, "Process-6":8}
+INFO Poslano sporocilo 
+Process-4 {"Process-0":3, "Process-4":5, "Process-6":8}
+INFO Priprava sporocila 
+Process-4 {"Process-0":3, "Process-4":6, "Process-6":8}
+INFO Poslano sporocilo 
+Process-4 {"Process-0":3, "Process-4":7, "Process-6":8}
+INFO Priprava sporocila 
+Process-4 {"Process-0":3, "Process-4":8, "Process-6":8}
+INFO Poslano sporocilo 
+Process-4 {"Process-0":3, "Process-1":8, "Process-13":6, "Process-22":8, "Process-4":9, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-4 {"Process-0":3, "Process-1":8, "Process-12":4, "Process-13":6, "Process-18":8, "Process-22":8, "Process-3":6, "Process-4":10, "Process-6":8}
+INFO Prejeto sporocilo 
+Process-5 {"Process-5":1}
+Initialization Complete
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":2, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":3, "Process-6":6}
+INFO Priprava sporocila 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":4, "Process-6":6}
+INFO Poslano sporocilo 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":5, "Process-6":6}
+INFO Priprava sporocila 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":6, "Process-6":6}
+INFO Poslano sporocilo 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":7, "Process-6":6}
+INFO Priprava sporocila 
+Process-5 {"Process-0":3, "Process-20":4, "Process-5":8, "Process-6":6}
+INFO Poslano sporocilo 
+Process-5 {"Process-0":3, "Process-16":4, "Process-17":8, "Process-20":4, "Process-22":6, "Process-5":9, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-5 {"Process-0":3, "Process-15":4, "Process-16":4, "Process-17":8, "Process-2":8, "Process-20":6, "Process-22":6, "Process-5":10, "Process-6":6}
+INFO Prejeto sporocilo 
+Process-6 {"Process-6":1}
+Initialization Complete
+Process-6 {"Process-0":3, "Process-6":2}
+INFO Prejeto sporocilo 
+Process-6 {"Process-0":3, "Process-6":3}
+INFO Priprava sporocila 
+Process-6 {"Process-0":3, "Process-6":4}
+INFO Poslano sporocilo 
+Process-6 {"Process-0":3, "Process-6":5}
+INFO Priprava sporocila 
+Process-6 {"Process-0":3, "Process-6":6}
+INFO Poslano sporocilo 
+Process-6 {"Process-0":3, "Process-6":7}
+INFO Priprava sporocila 
+Process-6 {"Process-0":3, "Process-6":8}
+INFO Poslano sporocilo 
+Process-6 {"Process-0":3, "Process-15":6, "Process-20":6, "Process-6":9}
+INFO Prejeto sporocilo 
+Process-6 {"Process-0":3, "Process-12":6, "Process-15":6, "Process-19":4, "Process-20":6, "Process-22":4, "Process-25":6, "Process-28":8, "Process-6":10, "Process-7":4}
+INFO Prejeto sporocilo 
+Process-7 {"Process-7":1}
+Initialization Complete
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":2}
+INFO Prejeto sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":3}
+INFO Priprava sporocila 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":4}
+INFO Poslano sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":5}
+INFO Priprava sporocila 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":6}
+INFO Poslano sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":7}
+INFO Priprava sporocila 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-6":4, "Process-7":8}
+INFO Poslano sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-19":4, "Process-22":4, "Process-3":8, "Process-6":4, "Process-7":9}
+INFO Prejeto sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-18":4, "Process-19":4, "Process-22":4, "Process-3":8, "Process-6":4, "Process-7":10}
+INFO Prejeto sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-17":6, "Process-18":4, "Process-19":4, "Process-21":8, "Process-22":6, "Process-3":8, "Process-6":4, "Process-7":11}
+INFO Prejeto sporocilo 
+Process-7 {"Process-0":3, "Process-12":6, "Process-17":6, "Process-18":4, "Process-19":4, "Process-21":8, "Process-22":6, "Process-28":6, "Process-3":8, "Process-6":4, "Process-7":12}
+INFO Prejeto sporocilo 
+Process-8 {"Process-8":1}
+Initialization Complete
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":2}
+INFO Prejeto sporocilo 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":3}
+INFO Priprava sporocila 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":4}
+INFO Poslano sporocilo 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":5}
+INFO Priprava sporocila 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":6}
+INFO Poslano sporocilo 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":7}
+INFO Priprava sporocila 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":8}
+INFO Poslano sporocilo 
+Process-8 {"Process-0":3, "Process-10":8, "Process-11":4, "Process-12":8, "Process-22":4, "Process-30":8, "Process-6":4, "Process-8":9}
+INFO Prejeto sporocilo 
+Process-9 {"Process-9":1}
+Initialization Complete
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":2}
+INFO Prejeto sporocilo 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":3}
+INFO Priprava sporocila 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":4}
+INFO Poslano sporocilo 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":5}
+INFO Priprava sporocila 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":6}
+INFO Poslano sporocilo 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":7}
+INFO Priprava sporocila 
+Process-9 {"Process-0":3, "Process-4":8, "Process-6":8, "Process-9":8}
+INFO Poslano sporocilo 
+Process-9 {"Process-0":3, "Process-20":8, "Process-23":4, "Process-4":8, "Process-6":8, "Process-9":9}
+INFO Prejeto sporocilo 
+Process-9 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-20":8, "Process-22":4, "Process-23":4, "Process-26":4, "Process-4":8, "Process-6":8, "Process-9":10}
+INFO Prejeto sporocilo 
+Process-9 {"Process-0":3, "Process-12":6, "Process-19":8, "Process-20":8, "Process-22":4, "Process-23":4, "Process-25":8, "Process-26":4, "Process-28":8, "Process-4":8, "Process-6":8, "Process-7":4, "Process-9":11}
+INFO Prejeto sporocilo 

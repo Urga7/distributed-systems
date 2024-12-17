@@ -1,5 +1,10 @@
 #!/bin/bash
-for i in {4..0}; do
-    ./app -pid=$i -n=5 -m=3 -k=3 > "output_$i.log" 2>&1 &
+n=32
+for ((i=n-1; i>=0; i--)); do
+    ./app -pid=$i -n=$n -m=2 -k=3 &
 done
-wait 
+wait
+
+~/go/bin/GoVector --log_type shiviz --log_dir . --outfile Log-full.log
+
+find . -name "Log-Process*.txt" -type f -delete
