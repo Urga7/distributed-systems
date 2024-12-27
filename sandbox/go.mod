@@ -1,11 +1,8 @@
 module sandbox
 
-go 1.23.3
-
-require github.com/DistributedClocks/GoVector v0.0.0-20240117185643-ae07272d0ebd
+go 1.23.2
 
 require (
-	github.com/daviddengcn/go-colortext v1.0.0 // indirect
-	github.com/vmihailenco/msgpack/v5 v5.1.4 // indirect
-	github.com/vmihailenco/tagparser v0.1.2 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
+	google.golang.org/protobuf v1.36.1 // indirect
 )
