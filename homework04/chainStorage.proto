@@ -3,12 +3,6 @@ syntax = "proto3";
 package chainStorage;
 option go_package = "/chainStorage";
 
-message Todo {
-  string key = 1;
-  string value = 2;
-  bool committed = 3;
-}
-
 message PutRequest {
   string key = 1;
   string value = 2;
@@ -30,5 +24,4 @@ message GetResponse {
 service ChainReplication {
   rpc Put(PutRequest) returns (PutResponse);
   rpc Get(GetRequest) returns (GetResponse);
-  rpc Commit(Todo) returns (PutResponse);
 }

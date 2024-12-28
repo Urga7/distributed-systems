@@ -43,13 +43,19 @@ func (tds *TodoStorage) Put(key, value string) {
 	}
 }
 
-func (tds *TodoStorage) Get(key string) (string, bool) {
+func (tds *TodoStorage) Get(key string) (string, bool, bool) {
 	tds.lock.RLock()
 	defer tds.lock.RUnlock()
-	if todo, ok := tds.dict[key]; ok && todo.Committed {
-		return todo.Value, true
+	todo, ok := tds.dict[key]
+	if !ok {
+		return "", false, false
 	}
-	return "", false
+
+	if !todo.Committed {
+		return "", true, false
+	}
+
+	return todo.Value, true, true
 }
 
 func (tds *TodoStorage) Commit(key string) error {

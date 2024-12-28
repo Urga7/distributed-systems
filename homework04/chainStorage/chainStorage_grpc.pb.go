@@ -19,9 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ChainReplication_Put_FullMethodName    = "/chainStorage.ChainReplication/Put"
-	ChainReplication_Get_FullMethodName    = "/chainStorage.ChainReplication/Get"
-	ChainReplication_Commit_FullMethodName = "/chainStorage.ChainReplication/Commit"
+	ChainReplication_Put_FullMethodName = "/chainStorage.ChainReplication/Put"
+	ChainReplication_Get_FullMethodName = "/chainStorage.ChainReplication/Get"
 )
 
 // ChainReplicationClient is the client API for ChainReplication service.
@@ -30,7 +29,6 @@ const (
 type ChainReplicationClient interface {
 	Put(ctx context.Context, in *PutRequest, opts ...grpc.CallOption) (*PutResponse, error)
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
-	Commit(ctx context.Context, in *Todo, opts ...grpc.CallOption) (*PutResponse, error)
 }
 
 type chainReplicationClient struct {
@@ -59,22 +57,12 @@ func (c *chainReplicationClient) Get(ctx context.Context, in *GetRequest, opts .
 	return out, nil
 }
 
-func (c *chainReplicationClient) Commit(ctx context.Context, in *Todo, opts ...grpc.CallOption) (*PutResponse, error) {
-	out := new(PutResponse)
-	err := c.cc.Invoke(ctx, ChainReplication_Commit_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // ChainReplicationServer is the server API for ChainReplication service.
 // All implementations must embed UnimplementedChainReplicationServer
 // for forward compatibility
 type ChainReplicationServer interface {
 	Put(context.Context, *PutRequest) (*PutResponse, error)
 	Get(context.Context, *GetRequest) (*GetResponse, error)
-	Commit(context.Context, *Todo) (*PutResponse, error)
 	mustEmbedUnimplementedChainReplicationServer()
 }
 
@@ -87,9 +75,6 @@ func (UnimplementedChainReplicationServer) Put(context.Context, *PutRequest) (*P
 }
 func (UnimplementedChainReplicationServer) Get(context.Context, *GetRequest) (*GetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
-}
-func (UnimplementedChainReplicationServer) Commit(context.Context, *Todo) (*PutResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Commit not implemented")
 }
 func (UnimplementedChainReplicationServer) mustEmbedUnimplementedChainReplicationServer() {}
 
@@ -140,24 +125,6 @@ func _ChainReplication_Get_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChainReplication_Commit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Todo)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ChainReplicationServer).Commit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: ChainReplication_Commit_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChainReplicationServer).Commit(ctx, req.(*Todo))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // ChainReplication_ServiceDesc is the grpc.ServiceDesc for ChainReplication service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -172,10 +139,6 @@ var ChainReplication_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Get",
 			Handler:    _ChainReplication_Get_Handler,
-		},
-		{
-			MethodName: "Commit",
-			Handler:    _ChainReplication_Commit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
