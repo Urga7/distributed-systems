@@ -9,7 +9,9 @@ import (
 	"os"
 	"sort"
 	"unsafe"
+	"time"
 
+	"homework05/cudaMedianFilter"
 	"github.com/InternatBlackhole/cudago/cuda"
 )
 
@@ -27,7 +29,6 @@ func rgbaToGray(img image.Image) *image.Gray {
 }
 
 func main() {
-	// Read command line arguments
 	inputImageStr := flag.String("i", "", "input image")
 	outputImageStr := flag.String("o", "", "output image")
 	flag.Parse()
@@ -35,11 +36,21 @@ func main() {
 		panic("Missing input or output image arguments\nUsage: go run main.go -i input.png -o output.png")
 	}
 
-	// Initialize CUDA API on OS thread
+	start := time.Now()
+	processImageOnCPU(*inputImageStr, *outputImageStr)
+	elapsed_cpu := time.Since(start)
+	fmt.Printf("Time on CPU: %fs\n", elapsed_cpu.Seconds());
 
+	start = time.Now()
+	processImageOnGPU(*inputImageStr, *outputImageStr)
+	elapsed_gpu := time.Since(start)
+	fmt.Printf("Time on GPU: %fs\n", elapsed_gpu.Seconds());
+
+	fmt.Printf("Pohitritev S = %f\n", elapsed_cpu.Seconds() / elapsed_gpu.Seconds())
 }
 
-func proccessImageOnGPU(inputImageStr, outputImageStr string) {
+func processImageOnGPU(inputImageStr, outputImageStr string) {
+	// Initialize CUDA API on OS thread
 	var err error
 	dev, err := cuda.Init(0)
 	if err != nil {
@@ -48,11 +59,10 @@ func proccessImageOnGPU(inputImageStr, outputImageStr string) {
 	defer dev.Close()
 
 	// Open image file
-	inputFile, err := os.Open(inputImageStr)
+	inputFile, err := os.Open(inputImageStr + ".png")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Read image " + inputImageStr)
 	defer inputFile.Close()
 
 	// Decode image
@@ -88,21 +98,23 @@ func proccessImageOnGPU(inputImageStr, outputImageStr string) {
 	}
 
 	// Specify grid and block size
-	dimBlock := cuda.Dim3{X: 1, Y: 1, Z: 1}
-	dimGrid := cuda.Dim3{X: 1, Y: 1, Z: 1}
+	dimBlock := cuda.Dim3{X: 16, Y: 16, Z: 1}
+	dimGrid := cuda.Dim3{X: uint32(imgSize.X) + dimBlock.X-1 / dimBlock.X, Y: uint32(imgSize.Y) + dimBlock.Y / dimBlock.Y, Z: 1}
 
 	// Call the kernel to execute on the device
-	err = cudaMedianFilter.Process(dimGrid, dimBlock, imgInDevice.Ptr, imgOutDevice.Ptr, int32(imgSize.X), int32(imgSize.Y))
+	start := time.Now()
+	err = cudaMedianFilter.MedianFilter(dimGrid, dimBlock, imgInDevice.Ptr, imgOutDevice.Ptr, int32(imgSize.X), int32(imgSize.Y))
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("Elapsed only method on GPU: %f\n", time.Since(start).Seconds())
 
 	// Copy image back to host
 	imgOutHost := make([]byte, size)
 	imgOutDevice.MemcpyFromDevice(unsafe.Pointer(&imgOutHost[0]), size)
 
 	// Save image to file
-	outputFile, err := os.Create(outputImageStr)
+	outputFile, err := os.Create(outputImageStr + "-GPU.png")
 	if err != nil {
 		panic(err)
 	}
@@ -115,17 +127,13 @@ func proccessImageOnGPU(inputImageStr, outputImageStr string) {
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("Image saved to " + outputImageStr)
 }
 
 func processImageOnCPU(inputImageStr, outputImageStr string) {
-	inputFile, err := os.Open(inputImageStr)
+	inputFile, err := os.Open(inputImageStr + ".png")
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("Read image " + inputImageStr)
 	defer inputFile.Close()
 
 	inputImage, err := png.Decode(inputFile)
@@ -136,7 +144,7 @@ func processImageOnCPU(inputImageStr, outputImageStr string) {
 	inputImageGray := rgbaToGray(inputImage)
 	outputImage := medianFilter(inputImageGray)
 
-	outputFile, err := os.Create(outputImageStr)
+	outputFile, err := os.Create(outputImageStr + "-CPU.png")
 	if err != nil {
 		panic(err)
 	}
@@ -146,8 +154,6 @@ func processImageOnCPU(inputImageStr, outputImageStr string) {
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("Image saved to " + outputImageStr)
 }
 
 func medianFilter(img *image.Gray) *image.Gray {
