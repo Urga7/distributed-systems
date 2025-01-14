@@ -6,8 +6,8 @@ import (
 	"image"
 	"image/color"
 	"image/png"
-	"naloga5/cudaImage"
 	"os"
+	"sort"
 	"unsafe"
 
 	"github.com/InternatBlackhole/cudago/cuda"
@@ -36,6 +36,10 @@ func main() {
 	}
 
 	// Initialize CUDA API on OS thread
+
+}
+
+func proccessImageOnGPU(inputImageStr, outputImageStr string) {
 	var err error
 	dev, err := cuda.Init(0)
 	if err != nil {
@@ -44,11 +48,11 @@ func main() {
 	defer dev.Close()
 
 	// Open image file
-	inputFile, err := os.Open(*inputImageStr)
+	inputFile, err := os.Open(inputImageStr)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Read image " + *inputImageStr)
+	fmt.Println("Read image " + inputImageStr)
 	defer inputFile.Close()
 
 	// Decode image
@@ -85,24 +89,20 @@ func main() {
 
 	// Specify grid and block size
 	dimBlock := cuda.Dim3{X: 1, Y: 1, Z: 1}
-	dimGrid := cuda.Dim3{
-		X: 1,
-		Y: 1,
-		Z: 1,
-	}
+	dimGrid := cuda.Dim3{X: 1, Y: 1, Z: 1}
 
 	// Call the kernel to execute on the device
-	err = cudaImage.Process(dimGrid, dimBlock, imgInDevice.Ptr, imgOutDevice.Ptr, int32(imgSize.X), int32(imgSize.Y))
+	err = cudaMedianFilter.Process(dimGrid, dimBlock, imgInDevice.Ptr, imgOutDevice.Ptr, int32(imgSize.X), int32(imgSize.Y))
 	if err != nil {
 		panic(err)
 	}
-	
+
 	// Copy image back to host
 	imgOutHost := make([]byte, size)
 	imgOutDevice.MemcpyFromDevice(unsafe.Pointer(&imgOutHost[0]), size)
 
 	// Save image to file
-	outputFile, err := os.Create(*outputImageStr)
+	outputFile, err := os.Create(outputImageStr)
 	if err != nil {
 		panic(err)
 	}
@@ -116,5 +116,65 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println("Image saved to " + *outputImageStr)
+	fmt.Println("Image saved to " + outputImageStr)
+}
+
+func processImageOnCPU(inputImageStr, outputImageStr string) {
+	inputFile, err := os.Open(inputImageStr)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Read image " + inputImageStr)
+	defer inputFile.Close()
+
+	inputImage, err := png.Decode(inputFile)
+	if err != nil {
+		panic(err)
+	}
+
+	inputImageGray := rgbaToGray(inputImage)
+	outputImage := medianFilter(inputImageGray)
+
+	outputFile, err := os.Create(outputImageStr)
+	if err != nil {
+		panic(err)
+	}
+	defer outputFile.Close()
+
+	err = png.Encode(outputFile, outputImage)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Image saved to " + outputImageStr)
+}
+
+func medianFilter(img *image.Gray) *image.Gray {
+	bounds := img.Bounds()
+	output := image.NewGray(bounds)
+	windowSize := 3
+	offset := windowSize / 2
+
+	for y := 0; y < bounds.Max.Y; y++ {
+		for x := 0; x < bounds.Max.X; x++ {
+			var window []uint8
+			for wy := -offset; wy <= offset; wy++ {
+				for wx := -offset; wx <= offset; wx++ {
+					clampedX := max(0, min(x+wx, bounds.Max.X-1))
+					clampedY := max(0, min(y+wy, bounds.Max.Y-1))
+
+					pixel := img.GrayAt(clampedX, clampedY).Y
+					window = append(window, pixel)
+				}
+			}
+
+			sort.Slice(window, func(i, j int) bool { return window[i] < window[j] })
+			median := window[len(window)/2]
+
+			output.SetGray(x, y, color.Gray{Y: median})
+		}
+	}
+
+	return output
 }

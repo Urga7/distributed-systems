@@ -3,20 +3,38 @@ extern "C"
 {
 #endif
 
-    // Copy image from input to output
-    __global__ void process(unsigned char *img_in, unsigned char *img_out, int width, int height)
-    {
-        // row
-        int j = threadIdx.x + blockIdx.x * blockDim.x;
-        // col
-        int i = threadIdx.y + blockIdx.y * blockDim.y;
-        int ipx = i * width + j;
-        while (ipx < width * height)
-        {
-            img_out[ipx] = img_in[ipx];
-            ipx += blockDim.x * gridDim.x * blockDim.y * gridDim.y;
+    __global__ void medianFilter(uint8_t* imgIn, uint8_t* imgOut, int width, int height) {
+        const int windowSize = 3;
+        int x = blockIdx.x * blockDim.x + threadIdx.x;
+        int y = blockIdx.y * blockDim.y + threadIdx.y;
+        
+        if (x >= width || y >= height) return;
+
+        int halfWindow = windowSize / 2;
+        uint8_t window[windowSize * windowSize];
+
+        int count = 0;
+        for (int wy = -halfWindow; wy <= halfWindow; ++wy) {
+            for (int wx = -halfWindow; wx <= halfWindow; ++wx) {
+                int nx = min(max(x + wx, 0), width - 1);
+                int ny = min(max(y + wy, 0), height - 1);
+                window[count++] = imgIn[ny * width + nx];
+            }
         }
+
+        for (int i = 0; i < count - 1; ++i) {
+            for (int j = i + 1; j < count; ++j) {
+                if (window[i] > window[j]) {
+                    uint8_t temp = window[i];
+                    window[i] = window[j];
+                    window[j] = temp;
+                }
+            }
+        }
+
+        imgOut[y * width + x] = window[count / 2];
     }
+
 
 #ifdef __cplusplus
 }

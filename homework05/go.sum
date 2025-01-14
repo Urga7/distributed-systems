@@ -1,2 +1,4 @@
 github.com/InternatBlackhole/cudago v1.2.0 h1:4cEoDPwbsdEhScVJPJuDbqGEvU1Rfu65GPeDcs3Tx6M=
 github.com/InternatBlackhole/cudago v1.2.0/go.mod h1:YgtpbJHj6g9c3Bm7edIw+XegGIdCS0Vzk9NpR7dqUd4=
+github.com/InternatBlackhole/cudago/cuda v1.2.1 h1:ofJEN6X3yUErQOPD1HL4X227a1WqAVHpOQ5PsBLB3gQ=
+github.com/InternatBlackhole/cudago/cuda v1.2.1/go.mod h1:cfpdEtjUovZni3fkAC6ayzqGBxorWuzvoNbPqDK087w=
